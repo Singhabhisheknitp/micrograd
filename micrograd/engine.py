@@ -12,7 +12,7 @@ class Value:
         self._op = _op # the op that produced this node, for graphviz / debugging / etc
 
     def __add__(self, other):
-        other = other if isinstance(other, Value) else Value(other)
+        other = other if isinstance(other, Value) else Value(other)  # ease of operations of class instaces with python inbuilt datatypes such as inte float, value(3) +2
         out = Value(self.data + other.data, (self, other), '+')
 
         def _backward():

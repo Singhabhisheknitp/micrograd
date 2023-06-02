@@ -3,6 +3,7 @@ class Value:
     """ stores a single scalar value and its gradient """
 
     def __init__(self, data, _children=(), _op=''):
+        # the Value object attributes storing the scalar data and gradient values
         self.data = data
         self.grad = 0
         # internal variables used for autograd graph construction

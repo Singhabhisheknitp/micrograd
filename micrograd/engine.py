@@ -8,7 +8,7 @@ class Value:
         self.grad = 0
         # internal variables used for autograd graph construction
         self._backward = lambda: None
-        self._prev = set(_children)
+        self._prev = set(_children)  # this is to find what child nodes associates through operation and result in main node. through .backward() we would access the gradient of child nodes and would use this internal attribute
         self._op = _op # the op that produced this node, for graphviz / debugging / etc
 
     def __add__(self, other):

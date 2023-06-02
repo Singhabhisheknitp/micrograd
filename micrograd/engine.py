@@ -56,6 +56,7 @@ class Value:
 
         # topological order all of the children in the graph
         topo = []
+        # this set is just to just to check if the nodes are visited if not visited get visited n stored in topo list
         visited = set()
         def build_topo(v):
             if v not in visited:

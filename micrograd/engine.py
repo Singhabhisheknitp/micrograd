@@ -18,7 +18,7 @@ class Value:
         def _backward():
             self.grad += out.grad
             other.grad += out.grad
-        out._backward = _backward
+        out._backward = _backward # storing the function in instance attributes so that when any instaces created by any operation then the function def associated in that operation could be called respectively
 
         return out
 
